@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+* {
+    font-family: monospace;
+    font-size: 12px;
+}
+body {
+    padding-top: 12px;
+    overflow-x: hidden;
+}
+.container {
+    margin: 8px auto 0 auto;
+}
+/*#table-range-wrapper {*/
+    /*!*width: 100%;*!*/
+/*}*/
+/*#table-ip-wrapper {*/
+    /*!*width: 100%;*!*/
+/*}*/
+
+#table_range td,
+#table_ip td{
+    padding: 1px;
+}
+.country-container {
+    float: left;
+    margin-right: 4px;
+    height: 15px;
+    overflow: hidden;
+}
+.country-container img {
+    margin-top: 0px;
+}
+td.right {
+    text-align: right;
+}
+
+/*!*.ui-tabs-vertical { width: 800px; }*!*/
+  /*!*.ui-tabs-vertical .ui-tabs-nav { padding: .2em .1em .2em .2em; float: left; width: 12em; }*!*/
+  /*!*.ui-tabs-vertical .ui-tabs-nav li { clear: left; width: 100%; border-bottom-width: 1px !important; border-right-width: 0 !important; margin: 0 -1px .2em 0; }*!*/
+  /*!*.ui-tabs-vertical .ui-tabs-nav li a { display:block; }*!*/
+  /*!*.ui-tabs-vertical .ui-tabs-nav li.ui-tabs-active { padding-bottom: 0; padding-right: .1em; border-right-width: 1px; }*!*/
+  /*!**!*/
+/*.ui-tabs-vertical .ui-tabs-panel { padding: 0; float: right; width: 640px;}*/
