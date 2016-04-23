@@ -27,6 +27,9 @@ $(function () {
         "deferRender": true,
         "iDisplayLength": 25,
         "order": [[1, "asc"]],
+        "fnDrawCallback": function () {
+            fillRangeEmptyRows();
+        },
         "aoColumnDefs": [
             {
                 "mData": 0,
@@ -88,8 +91,10 @@ $(function () {
     });
 
     $('#table_range tbody').on('click', 'tr', function () {
-        $(this).toggleClass('selected');
-        updateSearchButtonStatus();
+        if (!$(this).hasClass("empty-row")) {
+            $(this).toggleClass('selected');
+            updateSearchButtonStatus();
+        }
     });
 
     dt_table_ip = $('#table_ip').DataTable({
@@ -103,6 +108,9 @@ $(function () {
         "deferRender": true,
         "iDisplayLength": 25,
         "order": [[1, "asc"]],
+        "fnDrawCallback": function () {
+            fillIPEmptyRows();
+        },
         "aoColumnDefs": [
             {
                 "mData": 0,
@@ -138,12 +146,20 @@ $(function () {
 
 // button Handler
 function handlerSelectAllRange() {
-    $('#table_range tbody tr').addClass('selected');
+    $('#table_range tbody tr').each(function () {
+        if (!$(this).hasClass("empty-row")) {
+            $(this).addClass('selected');
+        }
+    })
     updateSearchButtonStatus();
 }
 
 function handlerDeselectAllRange() {
-    $('#table_range tbody tr').removeClass('selected');
+    $('#table_range tbody tr').each(function () {
+        if (!$(this).hasClass("empty-row")) {
+            $(this).removeClass('selected');
+        }
+    })
     updateSearchButtonStatus();
 }
 
@@ -298,9 +314,9 @@ function showCancelSearch() {
 }
 
 function updateSearchButtonStatus() {
-    if(dt_table_range.rows('.selected').data().length > 0) {
+    if (dt_table_range.rows('.selected').data().length > 0) {
         $('#btn_search').prop('disabled', false);
-    } else{
+    } else {
         $('#btn_search').prop('disabled', true);
     }
 }
@@ -376,5 +392,41 @@ function getRanges() {
         rngs.push(rng);
     }
     return rngs;
+}
+
+function fillRangeEmptyRows() {
+    if (dt_table_range != undefined) {
+        var pageLength = dt_table_range.page.info().length;
+        var tableRows = $('#table_range').find('tbody tr');
+        var rowsNeeded = pageLength - tableRows.length;
+        var lastRow = tableRows.last();
+        var str = ""
+        for (var i = 0; i < rowsNeeded; i++) {
+            var tds = "";
+            for (var j = 0; j < 7; j++) {
+                tds += "<td>&nbsp;</td>";
+            }
+            str += '<tr class="empty-row">' + tds + '</tr>';
+        }
+        lastRow.after(str);
+    }
+}
+
+function fillIPEmptyRows() {
+    if (dt_table_ip != undefined) {
+        var pageLength = dt_table_ip.page.info().length;
+        var tableRows = $('#table_ip').find('tbody tr');
+        var rowsNeeded = pageLength - tableRows.length;
+        var lastRow = tableRows.last();
+        var str = ""
+        for (var i = 0; i < rowsNeeded; i++) {
+            var tds = "";
+            for (var j = 0; j < 4; j++) {
+                tds += "<td>&nbsp;</td>";
+            }
+            str += '<tr class="empty-row">' + tds + '</tr>';
+        }
+        lastRow.after(str);
+    }
 }
 
