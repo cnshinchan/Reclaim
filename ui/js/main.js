@@ -78,7 +78,7 @@ $(function () {
             },
             {
                 'mData': function (data) {
-                    return data[8] ? "X." : "";
+                    return data[8] ? "Y." : "N.";
                 },
                 'aTargets': [7],
                 "sWidth": "20px",
