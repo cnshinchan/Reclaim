@@ -1,7 +1,5 @@
 Reclaim
 =============
-[![Build Status](https://travis-ci.org/hlaspoor/Reclaim.svg?branch=master)](https://travis-ci.org/hlaspoor/Reclaim)
-
 一个可以帮助你更有效的找到可用 Google IP 的工具
 
 ![](https://raw.githubusercontent.com/hlaspoor/DocImages/master/images/Relaim_Screen_Shot.png)
