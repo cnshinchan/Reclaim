@@ -25,6 +25,7 @@ $(function () {
         },
         "ajax": '../range_status',
         "deferRender": true,
+        "stateSave": true,
         "iDisplayLength": 25,
         "order": [[1, "asc"]],
         "fnDrawCallback": function () {
@@ -106,6 +107,7 @@ $(function () {
         },
         "ajax": '../ip_status',
         "deferRender": true,
+        "stateSave": true,
         "iDisplayLength": 25,
         "order": [[1, "asc"]],
         "fnDrawCallback": function () {
