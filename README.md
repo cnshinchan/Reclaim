@@ -23,6 +23,7 @@ Reclaim [ ![CI Releases](https://img.shields.io/github/release/hlaspoor/Reclaim.
 ### OUTPUT（对IP搜索结果进行操作）
 * 如果在 INPUT 中对IP段的状态进行更新的时候搜索到了IP，那么在 OUTPUT 的表格中就会显示已经搜索到的IP。
 * 点右侧的 **EXPORT** 导出按钮可以导出IP到右侧的文本框中。
+* 如果在搜索出的结果中你只需要某一些速度快的，或者某种证书类型的IP，你可以删除掉不需要的IP，再进行导出。
 
 其他说明
 -------------
@@ -33,4 +34,4 @@ Reclaim [ ![CI Releases](https://img.shields.io/github/release/hlaspoor/Reclaim.
   * 重新加载 range_db.json 文件中的数据到表格中，比如你删除了所有的IP段并且没有保存，你点 **RELOAD**  按钮之后 range_db.json 文件中的数据都会被重新加载到表格中。
 * 关于 NEVER 列
   * 当一个IP段被添加到表格中之后, NEVER 列默认值为 Y. 表示这个IP段从来没有搜索出可用的IP。如果IP段搜索出来了IP，那么 NEVER 列的值会变为 N.。
-  * NEVER 列的作用在于标示这个IP段是否从来没有搜索出过可用的IP。比如一个IP段的 NEVER 列是 N.，但是搜出的IP总数是0，则表示这个IP段曾经搜出过IP，只是现在没有可用IP而已。但是如果 NEVER 列是 Y. 搜索出的IP总数是0，则表示这个IP段从来都没有搜索出过有用的IP。
+  * **NEVER 列的作用在于标示这个IP段是否从来没有搜索出过可用的IP。**比如一个IP段的 NEVER 列是 N.，但是搜出的IP总数是0，则表示这个IP段曾经搜出过IP，只是现在没有可用IP而已。但是如果 NEVER 列是 Y. 搜索出的IP总数是0，则表示这个IP段从来都没有搜索出过有用的IP。
