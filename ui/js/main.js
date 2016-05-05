@@ -143,6 +143,13 @@ $(function () {
         ]
     });
 
+
+    $('#table_ip tbody').on('click', 'tr', function () {
+        if (!$(this).hasClass("empty-row")) {
+            $(this).toggleClass('selected');
+        }
+    });
+
     updateSearchButtonStatus();
 });
 
@@ -163,6 +170,22 @@ function handlerDeselectAllRange() {
         }
     })
     updateSearchButtonStatus();
+}
+
+function handlerSelectAllIP() {
+    $('#table_ip tbody tr').each(function () {
+        if (!$(this).hasClass("empty-row")) {
+            $(this).addClass('selected');
+        }
+    })
+}
+
+function handlerDeselectAllIP() {
+    $('#table_ip tbody tr').each(function () {
+        if (!$(this).hasClass("empty-row")) {
+            $(this).removeClass('selected');
+        }
+    })
 }
 
 function handlerDeleteRange() {
@@ -292,6 +315,25 @@ function handlerExportIP(method) {
         }
     }).done(function (data) {
         $('#txt_ip').val(data);
+    });
+}
+
+function handlerDeleteIP() {
+    var ips = new Array()
+    var len = dt_table_ip.rows('.selected').data().length;
+    for (var i = 0; i < len; i++) {
+        ips.push(dt_table_ip.rows('.selected').data()[i][1]);
+    }
+    $.ajax({
+        type: 'POST',
+        url: '/delete_ip?_dc=' + new Date().getTime(),
+        dataType: 'json',
+        contentType: 'application/json',
+        data: {
+            'ips': JSON.stringify(ips)
+        }
+    }).done(function () {
+        reloadTableIP();
     });
 }
 

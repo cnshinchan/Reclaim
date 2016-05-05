@@ -278,6 +278,11 @@ class GoogleIPChecker:
             if rng in self._lib:
                 del self._lib[rng]
 
+    def handle_post_delete_ips(self, ips):
+        for ip in ips:
+            if ip in self._ip_found:
+                del self._ip_found[ip]
+
     def handle_post_load_lib(self):
         try:
             with open(RANGE_DB_FILE, 'r') as lib:

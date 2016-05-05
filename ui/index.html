@@ -21,7 +21,7 @@
         <div class="col-xs-2" style="width: 200px;">
             <h1 style="font-family: Verdana; letter-spacing: -2px; font-weight: bold; font-size: 31px; margin-top: 0px;">
                 Reclaim</h1>
-            <p>Version: 1.0.4</p>
+            <p>Version: 1.0.5</p>
             <br/>
             <div class="btn-group" style="width: 170px;">
                 <button id="switch_range" type="button" class="btn btn-warning btn-sm" style="width: 50%;"
@@ -140,26 +140,36 @@
                     </table>
                 </div>
                 <div class="col-xs-4" style="width: 280px;">
-                    <!--<div class="btn-group btn-group-justified">-->
-                    <!--<a href="javascript:void(0);" class="btn btn-default btn-sm" onclick="handlerSelectAllRange()">-->
-                    <!--<i class="fa fa-check-square-o" title="Settings" aria-hidden="true"></i>-->
-                    <!--Select All-->
-                    <!--</a>-->
-                    <!--<a href="javascript:void(0);" class="btn btn-default btn-sm"-->
-                    <!--onclick="handlerDeselectAllRange()">-->
-                    <!--<i class="fa fa-square-o" title="Settings" aria-hidden="true"></i>-->
-                    <!--Deselect All-->
-                    <!--</a>-->
-                    <!--</div>-->
-                    <div class="form-group" style="margin-top: 0px;">
+                    <div class="btn-group" style="width: 100%;">
+                        <a href="javascript:void(0);" class="btn btn-default btn-sm" style="width: 50%;"
+                           onclick="handlerSelectAllIP()">
+                            <i class="fa fa-check-square-o" title="Settings" aria-hidden="true"></i>
+                            Select All
+                        </a>
+                        <a href="javascript:void(0);" class="btn btn-default btn-sm" style="width: 50%;"
+                           onclick="handlerDeselectAllIP()">
+                            <i class="fa fa-square-o" title="Settings" aria-hidden="true"></i>
+                            Deselect All
+                        </a>
+                    </div>
+                    <div class="btn-group" style="width: 100%;">
+                        <button type="button" class="btn btn-default btn-sm" style="width: 100%"
+                                onclick="handlerDeleteIP()">
+                            <i class="fa fa-trash-o" title="Settings" aria-hidden="true"></i>&nbsp;Delete
+                        </button>
+                    </div>
+                    <div class="form-group" style="margin-top: 20px;">
                         <textarea id="txt_ip" class="form-control" rows="15"
                                   style="resize: none; font-size: 13px;"></textarea>
                         <div class="btn-group" style="width: 100%;">
-                            <a href="javascript:void(0);" class="btn btn-primary btn-sm btn-block" data-toggle="dropdown"
+                            <a href="javascript:void(0);" class="btn btn-primary btn-sm btn-block"
+                               data-toggle="dropdown"
                                aria-expanded="false">Export</a>
                             <ul class="dropdown-menu">
-                                <li><a href="javascript:void(0);" onclick="handlerExportIP('VB')">X.X.X.X|X.X.X.X</a></li>
-                                <li><a href="javascript:void(0);" onclick="handlerExportIP('QC')">"X.X.X.X","X.X.X.X"</a>
+                                <li><a href="javascript:void(0);" onclick="handlerExportIP('VB')">X.X.X.X|X.X.X.X</a>
+                                </li>
+                                <li><a href="javascript:void(0);"
+                                       onclick="handlerExportIP('QC')">"X.X.X.X","X.X.X.X"</a>
                                 </li>
                             </ul>
                         </div>

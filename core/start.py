@@ -79,10 +79,19 @@ class HTTPRequestHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write('{"Status": "START"}')
             return
-        if self.path.startswith('/delete'):
+        if self.path.startswith('/delete?'):
             length = int(self.headers['content-length'])
             params = parse_qs(self.rfile.read(length), keep_blank_values=1)
             checker.handle_post_delete_ranges(ast.literal_eval(params['ranges'][0]))
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            self.wfile.write('{"Status": "OK"}')
+            return
+        if self.path.startswith('/delete_ip'):
+            length = int(self.headers['content-length'])
+            params = parse_qs(self.rfile.read(length), keep_blank_values=1)
+            checker.handle_post_delete_ips(ast.literal_eval(params['ips'][0]))
             self.send_response(200)
             self.send_header('Content-type', 'application/json')
             self.end_headers()
