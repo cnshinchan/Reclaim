@@ -1,4 +1,4 @@
-Reclaim
+Reclaim[ ![CI Releases](https://img.shields.io/github/release/hlaspoor/Reclaim.svg)](https://github.com/hlaspoor/Reclaim/releases)
 =============
 一个可以帮助你更有效的找到可用 Google IP 的工具
 
