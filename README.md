@@ -23,6 +23,7 @@ Reclaim [ ![CI Releases](https://img.shields.io/github/release/hlaspoor/Reclaim.
 ### OUTPUT（对IP搜索结果进行操作）
 * 如果在 INPUT 中对IP段的状态进行更新的时候搜索到了IP，那么在 OUTPUT 的表格中就会显示已经搜索到的IP。
 * 点右侧的 **EXPORT** 导出按钮可以导出IP到右侧的文本框中。
+* 如果在搜索出的结果中你只需要某一些速度快的，或者某种证书类型的IP，你可以删除掉不需要的IP，再进行导出。
 
 其他说明
 -------------
