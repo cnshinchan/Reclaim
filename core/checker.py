@@ -80,6 +80,8 @@ class GoogleIPChecker:
     def get_split(method):
         if 'VB' in method:
             end = '|'
+        elif 'QC' in method:
+            end = ","
         else:
             if 'CM' in method:
                 end = ',\r\n'
@@ -89,7 +91,7 @@ class GoogleIPChecker:
 
     @staticmethod
     def get_format(method, item, end):
-        if 'QM' in method:
+        if 'QC' in method:
             return '"%s"%s' % (item, end)
         else:
             return '%s%s' % (item, end)

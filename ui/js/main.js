@@ -282,13 +282,13 @@ function handlerCancelSearch() {
     })
 }
 
-function handlerExportIP() {
+function handlerExportIP(method) {
     $.ajax({
         type: 'POST',
         url: '/export_ip?_dc=' + new Date().getTime(),
         contentType: 'text/html',
         data: {
-            'method': 'VB'
+            'method': method
         }
     }).done(function (data) {
         $('#txt_ip').val(data);
