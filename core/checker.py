@@ -328,6 +328,8 @@ class GoogleIPChecker:
             return ips[:-1]
         if ips.endswith('\r\n'):
             return ips[:-2]
+        if ips.endswith('",'):
+            return ips[:-1]
         return ips
 
     def handle_post_import_ranges(self, rngs):
