@@ -260,7 +260,7 @@ function handlerShowRangeContainer() {
     $('#switch_range').addClass('btn-warning');
     $('#switch_ip').removeClass('btn-warning');
     $('#switch_ip').addClass('btn-default');
-    dt_table_range.columns.adjust().draw();
+    //dt_table_range.columns.adjust().draw();
 }
 
 function handlerShowIPContainer() {
@@ -270,7 +270,7 @@ function handlerShowIPContainer() {
     $('#switch_range').addClass('btn-default');
     $('#switch_ip').removeClass('btn-default');
     $('#switch_ip').addClass('btn-warning');
-    dt_table_ip.columns.adjust().draw();
+    //dt_table_ip.columns.adjust().draw();
 }
 
 function handlerStartSearch() {
