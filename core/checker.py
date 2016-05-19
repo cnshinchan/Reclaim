@@ -8,7 +8,7 @@ import re
 import urllib2
 
 MAX_TIME_OUT = 3
-MAX_THREAD_NUM = 80
+MAX_THREAD_NUM = 100
 RANGE_DB_FILE = 'range_db.json'
 COUNTRY_DB_FILE = 'country.json'
 
