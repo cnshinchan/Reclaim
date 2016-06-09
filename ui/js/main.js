@@ -41,7 +41,7 @@ $(function () {
                 "mData": 1,
                 "iDataSort": 0,
                 "aTargets": [1],
-                "sWidth": "120px"
+                "sWidth": "100px"
             },
             {
                 "mData": function (data) {
