@@ -222,7 +222,7 @@ class GoogleIPChecker:
             if self._lib[r]['CC'] in self._country_lib:
                 rng.append(self._country_lib[self._lib[r]['CC']])
             else:
-                rng.append('')
+                rng.append(self._lib[r]['CC'])
             rng.append(self._lib[r]['TP'])
             rng.append(self._lib[r]['FC'])
             rng.append(self._lib[r]['MIN'])
